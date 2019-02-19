@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans.xsd
+	 http://code.alibabatech.com/schema/dubbo
+	 http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="${dubbo.application.name}"/>
+    <dubbo:registry id="registry" file=".dubbo/${dubbo.application.name}.cache" protocol="dubbo"
+            address="${dubbo.registry.address}"/>
+    <dubbo:protocol name="dubbo" port="${dubbo.protocol.port}" threads="500" threadpool="cached"/>
+
+    <!--不重试，避免事件重复记录，影响规则统计 -->
+    <dubbo:consumer retries="0"/>
+
+    <dubbo:reference id="osNewInfoService" check="false" interface="com.byxf.nms.service.OsNewInfoService"/>
+</beans>

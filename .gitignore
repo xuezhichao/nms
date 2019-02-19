@@ -1,0 +1,10 @@
+byxf-nms-parent/.idea
+byxf-nms-parent/.idea/artifacts/
+byxf-nms-parent/.idea/compiler.xml
+byxf-nms-parent/.idea/encodings.xml
+byxf-nms-parent/nms-api/target
+byxf-nms-parent/nms-core/target
+byxf-nms-parent/nms-oms/target
+byxf-nms-parent/nms-web/target
+byxf-nms-parent/.dubbo
+byxf-nms-parent/log.base_IS_UNDEFINED/nms-web.log

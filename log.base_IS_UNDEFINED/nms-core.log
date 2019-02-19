@@ -1,0 +1,35 @@
+2019-02-18 18:29:51.874 INFO  [main] [|] com.byxf.nms.NmsCoreMain.logStarting():50 - Starting NmsCoreMain on DESKTOP-4TGEC3H with PID 896 (D:\Git\nms\byxf-nms-parent\nms-core\target\classes started by Zc.Xue in D:\Git\nms)
+2019-02-18 18:29:51.924 INFO  [main] [|] com.byxf.nms.NmsCoreMain.logStartupProfileInfo():656 - The following profiles are active: @profileActive@
+2019-02-18 18:29:52.052 INFO  [main] [|] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh():589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@363a52f: startup date [Mon Feb 18 18:29:52 CST 2019]; root of context hierarchy
+2019-02-18 18:29:53.288 INFO  [main] [|] o.s.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions():316 - Loading XML bean definitions from class path resource [dubbo-config.xml]
+2019-02-18 18:29:54.592 WARN  [main] [|] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh():557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name '${dubbo.application.name}' defined in null: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+2019-02-18 18:29:54.609 INFO  [main] [|] o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logAutoConfigurationReport():101 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-02-18 18:29:54.618 ERROR [main] [|] org.springframework.boot.SpringApplication.reportFailure():833 - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name '${dubbo.application.name}' defined in null: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:228)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:182)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:157)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:284)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:693)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:388)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at com.byxf.nms.NmsCoreMain.main(NmsCoreMain.java:39)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:296)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:222)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:147)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:85)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:225)
+	... 11 common frames omitted
+2019-02-18 18:29:54.624 ERROR [main] [|] com.byxf.nms.NmsCoreMain.main():42 - nms application start up is false!

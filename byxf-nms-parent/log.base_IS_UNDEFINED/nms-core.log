@@ -1,0 +1,108 @@
+2019-01-28 15:35:30.384 INFO  [main] [|] com.byxf.nms.NmsCoreMain.logStarting():50 - Starting NmsCoreMain on DESKTOP-0T1FHUE with PID 6448 (C:\code\byxf-nms-parent\nms-core\target\classes started by king in C:\code\byxf-nms-parent)
+2019-01-28 15:35:30.390 INFO  [main] [|] com.byxf.nms.NmsCoreMain.logStartupProfileInfo():656 - The following profiles are active: @profileActive@
+2019-01-28 15:35:30.506 INFO  [main] [|] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh():589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@eb3185: startup date [Mon Jan 28 15:35:30 CST 2019]; root of context hierarchy
+2019-01-28 15:35:31.172 INFO  [main] [|] o.s.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions():316 - Loading XML bean definitions from class path resource [dubbo-config.xml]
+2019-01-28 15:35:31.322 INFO  [main] [|] com.alibaba.dubbo.common.logger.LoggerFactory.info():42 - using logger: com.alibaba.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+2019-01-28 15:35:31.781 WARN  [main] [|] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh():557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name '${dubbo.application.name}' defined in null: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+2019-01-28 15:35:31.793 INFO  [main] [|] o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logAutoConfigurationReport():101 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-01-28 15:35:31.807 ERROR [main] [|] org.springframework.boot.SpringApplication.reportFailure():833 - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name '${dubbo.application.name}' defined in null: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:228)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:182)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:157)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:284)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:693)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:388)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at com.byxf.nms.NmsCoreMain.main(NmsCoreMain.java:38)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:296)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:222)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:147)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:85)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:225)
+	... 11 common frames omitted
+2019-01-28 15:35:31.812 ERROR [main] [|] com.byxf.nms.NmsCoreMain.main():41 - nms application start up is false!
+2019-01-28 15:47:15.756 INFO  [main] [|] com.byxf.nms.NmsCoreMain.logStarting():50 - Starting NmsCoreMain on DESKTOP-0T1FHUE with PID 13116 (C:\code\byxf-nms-parent\nms-core\target\classes started by king in C:\code\byxf-nms-parent)
+2019-01-28 15:47:15.765 INFO  [main] [|] com.byxf.nms.NmsCoreMain.logStartupProfileInfo():656 - The following profiles are active: @profileActive@
+2019-01-28 15:47:15.848 INFO  [main] [|] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh():589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2ea68c: startup date [Mon Jan 28 15:47:15 CST 2019]; root of context hierarchy
+2019-01-28 15:47:16.555 INFO  [main] [|] o.s.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions():316 - Loading XML bean definitions from class path resource [dubbo-config.xml]
+2019-01-28 15:47:16.669 INFO  [main] [|] com.alibaba.dubbo.common.logger.LoggerFactory.info():42 - using logger: com.alibaba.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+2019-01-28 15:47:17.139 WARN  [main] [|] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh():557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name '${dubbo.application.name}' defined in null: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+2019-01-28 15:47:17.146 INFO  [main] [|] o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logAutoConfigurationReport():101 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-01-28 15:47:17.156 ERROR [main] [|] org.springframework.boot.SpringApplication.reportFailure():833 - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name '${dubbo.application.name}' defined in null: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:228)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:182)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:157)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:284)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:693)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:388)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at com.byxf.nms.NmsCoreMain.main(NmsCoreMain.java:38)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:296)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:222)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:147)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:85)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:225)
+	... 11 common frames omitted
+2019-01-28 15:47:17.167 ERROR [main] [|] com.byxf.nms.NmsCoreMain.main():41 - nms application start up is false!
+2019-01-28 16:02:59.178 INFO  [main] [|] com.byxf.nms.NmsCoreMain.logStarting():50 - Starting NmsCoreMain on DESKTOP-0T1FHUE with PID 10844 (C:\code\byxf-nms-parent\nms-core\target\classes started by king in C:\code\byxf-nms-parent)
+2019-01-28 16:02:59.187 INFO  [main] [|] com.byxf.nms.NmsCoreMain.logStartupProfileInfo():656 - The following profiles are active: @profileActive@
+2019-01-28 16:02:59.270 INFO  [main] [|] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.prepareRefresh():589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@16c81a3: startup date [Mon Jan 28 16:02:59 CST 2019]; root of context hierarchy
+2019-01-28 16:03:00.118 INFO  [main] [|] o.s.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions():316 - Loading XML bean definitions from class path resource [dubbo-config.xml]
+2019-01-28 16:03:00.270 INFO  [main] [|] com.alibaba.dubbo.common.logger.LoggerFactory.info():42 - using logger: com.alibaba.dubbo.common.logger.slf4j.Slf4jLoggerAdapter
+2019-01-28 16:03:00.724 WARN  [main] [|] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh():557 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name '${dubbo.application.name}' defined in null: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+2019-01-28 16:03:00.731 INFO  [main] [|] o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logAutoConfigurationReport():101 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-01-28 16:03:00.742 ERROR [main] [|] org.springframework.boot.SpringApplication.reportFailure():833 - Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name '${dubbo.application.name}' defined in null: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:228)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:182)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:157)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:284)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:693)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:388)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:327)
+	at com.byxf.nms.NmsCoreMain.main(NmsCoreMain.java:38)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'dubbo.application.name' in value "${dubbo.application.name}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:172)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:237)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:211)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:296)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:222)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:147)
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:85)
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:225)
+	... 11 common frames omitted
+2019-01-28 16:03:00.746 ERROR [main] [|] com.byxf.nms.NmsCoreMain.main():41 - nms application start up is false!

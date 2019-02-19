@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/byxf-nms-parent/byxf-nms-parent.iml" filepath="$PROJECT_DIR$/byxf-nms-parent/byxf-nms-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/nms.iml" filepath="$PROJECT_DIR$/.idea/nms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/byxf-nms-parent/nms-api/nms-api.iml" filepath="$PROJECT_DIR$/byxf-nms-parent/nms-api/nms-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/byxf-nms-parent/nms-core/nms-core.iml" filepath="$PROJECT_DIR$/byxf-nms-parent/nms-core/nms-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/byxf-nms-parent/nms-oms/nms-oms.iml" filepath="$PROJECT_DIR$/byxf-nms-parent/nms-oms/nms-oms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/byxf-nms-parent/nms-web/nms-web.iml" filepath="$PROJECT_DIR$/byxf-nms-parent/nms-web/nms-web.iml" />
+    </modules>
+  </component>
+</project>

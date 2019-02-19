@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>byxf-nms-parent</artifactId>
+        <groupId>com.byxf.nms</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>nms-core</artifactId>
+    <groupId>com.byxf.nms</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <!-- dubbo -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.5.3</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- nms-api -->
+       <dependency>
+            <groupId>com.byxf.nms</groupId>
+            <artifactId>nms-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${artifactId}</finalName>
+        <resources>
+            <!-- 控制资源文件的拷贝 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <targetPath>${project.build.directory}/classes</targetPath>
+                <!-- *。properties配置文件中动态参数生效必须设置为true -->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- 设置源文件编码方式 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- The configuration of maven-jar-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <!-- The configuration of the plugin -->
+                <configuration>
+                    <!-- Configuration of the archiver -->
+                    <archive>
+
+                        <!-- 生成的jar中，不要包含pom.xml和pom.properties这两个文件 -->
+                        <addMavenDescriptor>false</addMavenDescriptor>
+
+                        <!-- Manifest specific configuration -->
+                        <manifest>
+                            <!-- 是否要把第三方jar放到manifest的classpath中 -->
+                            <addClasspath>true</addClasspath>
+                            <!-- 生成的manifest中classpath的前缀，因为要把第三方jar放到lib目录下，所以classpath的前缀是lib/ -->
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <!-- 应用的main class -->
+                            <mainClass>com.byxf.nms.NmsCoreMain</mainClass>
+                        </manifest>
+                    </archive>
+                    <!-- 过滤掉不希望包含在jar中的文件 -->
+                    <!--<excludes> -->
+                    <!--<exclude>${project.basedir}/xml/*</exclude> -->
+                    <!--</excludes> -->
+                </configuration>
+            </plugin>
+
+            <!-- The configuration of maven-assembly-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <!-- The configuration of the plugin -->
+                <configuration>
+                    <!-- Specifies the configuration file of the assembly plugin -->
+                    <descriptors>
+                        <descriptor>assembly.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+                <dubbo.registry.address>zookeeper://10.10.8.35:2181</dubbo.registry.address>
+                <redis.ips>10.10.8.35:26379,10.10.8.35:26380</redis.ips>
+                <spring.datasource.url>jdbc:mysql://127.0.0.1:3306/nms?useUnicode=true&amp;characterEncoding=UTF-8&amp;rewriteBatchedStatements=true&amp;allowMultiQueries=true</spring.datasource.url>
+                <spring.datasource.username>root</spring.datasource.username>
+                <spring.datasource.password>root</spring.datasource.password>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+       <!-- <profile>
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+                <dubbo.registry.address>zookeeper://10.10.8.35:2181</dubbo.registry.address>
+                <redis.ips>10.10.8.35:26379,10.10.8.35:26380</redis.ips>
+                <spring.datasource.url>jdbc:mysql://10.10.8.35:3306/nms?useUnicode=true&amp;characterEncoding=UTF-8&amp;rewriteBatchedStatements=true&amp;allowMultiQueries=true</spring.datasource.url>
+                <spring.datasource.username>root</spring.datasource.username>
+                <spring.datasource.password>byxf1qaz</spring.datasource.password>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>-->
+        <profile>
+            <id>test_87</id>
+            <properties>
+                <profileActive>test</profileActive>
+                <dubbo.registry.address>zookeeper://172.16.1.87:2181</dubbo.registry.address>
+                <redis.ips>172.16.1.87:26379,172.16.1.87:26380</redis.ips>
+                <spring.datasource.url>jdbc:mysql://172.16.1.87:3306/rms?useUnicode=true&amp;amp;characterEncoding=UTF-8&amp;amp;rewriteBatchedStatements=true&amp;amp;allowMultiQueries=true</spring.datasource.url>
+                <spring.datasource.username>root</spring.datasource.username>
+                <spring.datasource.password>byxf54test</spring.datasource.password>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test_35</id>
+            <properties>
+                <profileActive>test</profileActive>
+                <dubbo.registry.address>zookeeper://10.10.8.35:2181</dubbo.registry.address>
+                <redis.ips>10.10.8.35:26379,10.10.8.35:26380</redis.ips>
+                <spring.datasource.url>jdbc:mysql://10.10.8.35:3306/nms?useUnicode=true&amp;characterEncoding=UTF-8&amp;rewriteBatchedStatements=true&amp;allowMultiQueries=true</spring.datasource.url>
+                <spring.datasource.username>root</spring.datasource.username>
+                <spring.datasource.password>byxf1qaz</spring.datasource.password>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test_36</id>
+            <properties>
+                <profileActive>test</profileActive>
+                <dubbo.registry.address>zookeeper://10.10.8.36:2181</dubbo.registry.address>
+                <redis.ips>10.10.8.36:26379,10.10.8.36:26380</redis.ips>
+                <spring.datasource.url>jdbc:mysql://10.10.8.35:3306/nms?useUnicode=true&amp;characterEncoding=UTF-8&amp;rewriteBatchedStatements=true&amp;allowMultiQueries=true</spring.datasource.url>
+                <spring.datasource.username>root</spring.datasource.username>
+                <spring.datasource.password>byxf1qaz</spring.datasource.password>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test_81</id>
+            <properties>
+                <profileActive>test</profileActive>
+                <dubbo.registry.address>zookeeper://10.10.8.81:2181</dubbo.registry.address>
+                <redis.ips>10.10.8.81:26379,10.10.8.81:26380</redis.ips>
+                <spring.datasource.url>jdbc:mysql://10.10.8.81:3306/rms?useUnicode=true&amp;amp;characterEncoding=UTF-8&amp;amp;rewriteBatchedStatements=true&amp;amp;allowMultiQueries=true</spring.datasource.url>
+                <spring.datasource.username>root</spring.datasource.username>
+                <spring.datasource.password>byxf54test</spring.datasource.password>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>prd</id>
+            <properties>
+                <profileActive>prd</profileActive>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+</project>

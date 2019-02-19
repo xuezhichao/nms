@@ -1,0 +1,36 @@
+<assembly xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/assembly-1.0.0.xsd">
+	<id>package</id>
+	<formats>
+		<format>jar</format>
+	</formats>
+	<!--是否包含根目录文件夹 -->
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<includes>
+				<include>*.properties</include>
+				<include>*.xml</include>
+				<include>*.xls</include>
+			</includes>
+			<outputDirectory>/resources</outputDirectory>
+			<directory>${project.build.directory}/classes</directory>
+		</fileSet>
+
+		<fileSet>
+			<includes>
+				<include>*.sh</include>
+				<include>*.bat</include>
+			</includes>
+			<outputDirectory>/</outputDirectory>
+			<directory>src/main/script</directory>
+		</fileSet>
+	</fileSets>
+
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<scope>runtime</scope>
+		</dependencySet>
+	</dependencySets>
+</assembly>

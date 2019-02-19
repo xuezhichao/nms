@@ -1,0 +1,3 @@
+#Dubbo Registry Cache
+#Tue Feb 19 15:01:02 CST 2019
+com.byxf.nms.service.OsNewInfoService=empty\://192.168.6.1\:28709/com.byxf.nms.service.OsNewInfoService?anyhost\=true&application\=nms-core&category\=configurators&check\=false&dubbo\=2.5.3&interface\=com.byxf.nms.service.OsNewInfoService&methods\=saveOrUpdateOsNewInfo,queryOsNewInfoByNewId,saveOrUpdateOsNewStatusInfo,deleteOsNewInfos,queryOsNewInfosByPage&pid\=18612&side\=provider&threadpool\=cached&threads\=500&timestamp\=1550559662306
